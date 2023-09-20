@@ -58,4 +58,4 @@ npm start
 
 ![i5](./images/5.png)
 
-### Developed by - Shashank Shekhar
+### Developed by - SAURABH KUMAR
