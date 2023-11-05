@@ -1,3 +1,6 @@
+import { useHistory } from "react-router-dom";
+import { CryptoState } from "../CryptoContext";
+
 import {
     AppBar,
     Container,
@@ -11,8 +14,6 @@ import {
     makeStyles,
     ThemeProvider,
   } from "@material-ui/core/styles";
-  import { useHistory } from "react-router-dom";
-  import { CryptoState } from "../CryptoContext";
   
   const useStyles = makeStyles((theme) => ({
     title: {
@@ -59,10 +60,11 @@ import {
                 value={currency}
                 style={{ width: 100, height: 40, marginLeft: 15 }}
                 onChange={(e) => setCurrency(e.target.value)}
-              >
+                >
                 <MenuItem value={"USD"}>USD</MenuItem>
                 <MenuItem value={"INR"}>INR</MenuItem>
               </Select>
+              
             </Toolbar>
           </Container>
         </AppBar>

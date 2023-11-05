@@ -1,6 +1,10 @@
+import SelectButton from "./SelectButton";
+import { chartDays } from "../config/data";
+import { CryptoState } from "../CryptoContext";
+import { HistoricalChart } from "../config/api";
+
 import axios from "axios";
 import { useEffect, useState } from "react";
-import { HistoricalChart } from "../config/api";
 import { Line } from "react-chartjs-2";
 import {
   CircularProgress,
@@ -8,9 +12,6 @@ import {
   makeStyles,
   ThemeProvider,
 } from "@material-ui/core";
-import SelectButton from "./SelectButton";
-import { chartDays } from "../config/data";
-import { CryptoState } from "../CryptoContext";
 
 const CoinInfo = ({ coin }) => {
   const [historicData, setHistoricData] = useState();
@@ -87,10 +88,18 @@ const CoinInfo = ({ coin }) => {
                     data: historicData.map((coin) => coin[1]),
                     label: `Price ( Past ${days} Days ) in ${currency}`,
                     borderColor: "rgba(231, 59, 59, 0.92)",
-                    borderWidth: 1.5
+                    borderWidth: 1
                   },
                 ],
               }}
+              // options={{
+              //     elements: {
+              //       point:{
+              //         radius: 0.1,
+              //       },
+              //     },
+              //   }
+              // }
               
             />
             <div
